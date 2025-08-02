@@ -8,13 +8,14 @@
 // Output: 11
 // Explanation: The subarray [7, -1, 2, 3] has the largest sum 11.
 #include<iostream>
+#include<climits>
 using namespace std;
 
 int main(){
   int arr[7] = {2,3,-8,7,-1,2,3};
   
   // Way 1 with time complexity - O(n^2)
-  int maxi = 0;
+  int maxi = INT_MIN;
   int n = 7;
   for(int i = 0; i < n; i++){
     int prefix = 0;
@@ -25,7 +26,7 @@ int main(){
   }
 cout << "Maximum sum of contigous subarray is: " << maxi << endl;
 
-maxi = 0;
+maxi = INT_MIN;
 int prefix = 0;
 // Way-2 with time complexity O(n)
 for(int i = 0; i < n; i++){
